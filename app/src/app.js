@@ -8,7 +8,7 @@ var client = new elasticsearch.Client({
 });
 
 client.search({
-  q: 'booms'
+  _cat: 'indices'
 }).then(function (body) {
   var booms = body.booms.booms;
 }, function (error) {

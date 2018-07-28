@@ -8,7 +8,10 @@
   },
   "author": "Philip Bankier",
   "dependencies": {
-    "express": "4.13.4",
+    "elasticsearch": "^15.1.1",
+    "express": "^4.16.3",
+    "node-arduino": "^1.7.3",
+    "node-red-node-arduino": "0.0.18",
     "nodemon": "^1.18.3"
   }
 }

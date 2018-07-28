@@ -2,39 +2,19 @@ version: "3"
 
 services:
   nginx:
-    build:
-      context: ./nginx/
+    build: ./nginx/
     ports:
       - "9000:9000"
-    volumes:
-      - ./logs/:/var/log/nginx/
     restart: on-failure
 
   elasticsearch:
-    build:
-      context: ./elasticsearch/
-    ports:
-      - "9200:9200"
-      - "9300:9300"    
+    build: ./elasticsearch/
     restart: on-failure
-    networks:
-      - linkage
 
   kibana:
     build: ./kibana/
-    ports:
-      - "5601:5601"
     restart: on-failure
-    networks:
-      - linkage
 
 volumes:
   elasticsearch-volume:
   kibana-volume:
-
-networks:
-  linkage:
-
-
-
-
