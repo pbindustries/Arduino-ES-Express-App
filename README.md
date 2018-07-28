@@ -7,7 +7,7 @@ Express app port: 4000
 
 Email me if you have any questions: pbindustriesapps@gmail.com
 
-# Licence
+## License
 
 The MIT License (MIT)
 
