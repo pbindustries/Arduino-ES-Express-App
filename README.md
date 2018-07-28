@@ -1,5 +1,8 @@
 # Arduino ES Express App
 
+Nginx docker server port: 3000
+Express app port: 4000
+
 ## Getting Started
 
 Email me if you have any questions: pbindustriesapps@gmail.com

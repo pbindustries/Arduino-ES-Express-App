@@ -1,6 +1,19 @@
 var express = require('express');
 var elasticsearch = require('elasticsearch');
 var app = express();
+// var Serial = ;
+let output = 0;
+let value;
+
+var setup = (fun => {
+  Serial.begin(57600);
+  pinMode(output, INPUT);
+});
+var loop = (fun => {
+  value = analogRead(output),
+    Serial.print("Put Sensor Output Value Here: ");
+  Serial.println(value);
+});
 
 var client = new elasticsearch.Client({
   host: 'localhost:9200',
@@ -10,26 +23,24 @@ var client = new elasticsearch.Client({
 client.search({
   _cat: 'indices'
 }).then(function (body) {
-  var booms = body.booms.booms;
+  var arduino = body.arduino.functions;
 }, function (error) {
   console.trace(error.message);
 });
 
 client.indices.delete({
-  index: 'test_index',
+  index: 'arduino_index',
   ignore: [404]
 }).then(function (body) {
-  // since we told the client to ignore 404 errors, the
-  // promise is resolved even if the index does not exist
-  console.log('index was deleted or never existed');
+  console.log('Index was deleted or never existed');
 }, function (error) {
-  // oh no!
+  console.log('! ERROR - Somthing is wrong :( !')
 });
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.send('Well hello there ;)');
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(4000, function () {
+  console.log('Getting down on port 4000!');
 });
