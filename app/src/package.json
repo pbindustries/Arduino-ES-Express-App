@@ -1,0 +1,14 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "Arduino-ES-Express-App",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Philip Bankier",
+  "dependencies": {
+    "express": "4.13.4",
+    "nodemon": "^1.18.3"
+  }
+}
