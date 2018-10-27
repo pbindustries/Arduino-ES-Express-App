@@ -44,7 +44,13 @@
     "nodemon": "^1.18.3",
     "rxjs": "6.1.0",
     "rxjs-compat": "6.1.0",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "body-parser": "1.18.3",
+    "express": "4.16.3",
+    "johnny-five": "0.15.0",
+    "moment": "2.22.2",
+    "node-dweetio": "0.0.11",
+    "socket.io": "2.1.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.6.0",
